@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Kaira</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: var(--bs-light);
+            padding: 20px;
+        }
+        .product-details {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: var(--bs-white);
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h1 {
+            color: var(--heading-color);
+        }
+        p {
+            color: var(--bs-body-color);
+            font-size: 16px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: var(--bs-primary);
+            color: var(--bs-light);
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: var(--bs-black);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-details">
+        <img id="product-image" src="" alt="Product Image">
+        <h1 id="product-title"></h1>
+        <p id="product-description"></p>
+        <a href="index.html">Back to Collection</a>
+    </div>
+
+    <script>
+        // Extract URL Parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("product-image").src = urlParams.get("image");
+        document.getElementById("product-title").innerText = urlParams.get("title");
+        document.getElementById("product-description").innerText = urlParams.get("description");
+    </script>
+
+</body>
+</html>

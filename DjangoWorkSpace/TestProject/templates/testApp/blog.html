@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details - Kaira</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: var(--bs-light);
+            padding: 20px;
+        }
+        .blog-details {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background: var(--bs-white);
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h1 {
+            color: var(--heading-color);
+        }
+        .blog-meta {
+            font-size: 14px;
+            color: var(--bs-gray-dark);
+            margin-bottom: 10px;
+        }
+        p {
+            color: var(--bs-body-color);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: var(--bs-primary);
+            color: var(--bs-light);
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: var(--bs-black);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blog-details">
+        <img id="blog-image" src="" alt="Blog Image">
+        <h1 id="blog-title"></h1>
+        <p class="blog-meta" id="blog-date"></p>
+        <p id="blog-description"></p>
+        <a href="index.html">Back to Blogs</a>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("blog-image").src = urlParams.get("image");
+        document.getElementById("blog-title").innerText = urlParams.get("title");
+        document.getElementById("blog-date").innerText = urlParams.get("date");
+        document.getElementById("blog-description").innerText = urlParams.get("description");
+    </script>
+
+</body>
+</html>
